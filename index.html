@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Store</title>
+    <title>RGB Tech Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page">
+    
     <header class="header">
-        <h1 class="header__title">TechItemX Store</h1>
+        <div class="header__logo">
+            <span class="header__logo-text">TechItemX</span> Store
+        </div>
+        <button class="header__cart-btn" id="open-cart-btn">
+            🛒 <span class="header__cart-badge" id="cart-counter">0</span>
+        </button>
     </header>
 
-    <main class="main-content">
-        <section class="products">
-            <h2 class="products__title">Lista de Productos</h2>
-            <div class="products__grid" id="product-list">
-                <!-- Los productos se inyectarán aquí vía JavaScript -->
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Eleva tu Setup</h1>
+            <p class="hero__subtitle">Periféricos de alto rendimiento para gamers y creadores.</p>
+        </div>
+    </section>
 
-        <aside class="cart">
-            <h2 class="cart__title">Carrito de Compras</h2>
-            <div class="cart__items" id="cart-list">
-                <p class="cart__empty-msg">Tu carrito está vacío.</p>
-                <!-- Los ítems del carrito se inyectarán aquí -->
-            </div>
-            <div class="cart__summary">
-                <span class="cart__total-label">Total:</span>
-                <span class="cart__total-price" id="cart-total">$0.00</span>
-            </div>
-        </aside>
+    <main class="main-content">
+        <h2 class="section-title">Últimos Lanzamientos</h2>
+        <div class="products-grid" id="product-list">
+        </div>
     </main>
+
+    <div class="overlay" id="cart-overlay"></div>
+
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer__header">
+            <h2 class="cart-drawer__title">Tu Carrito</h2>
+            <button class="cart-drawer__close" id="close-cart-btn">✕</button>
+        </div>
+        
+        <div class="cart-drawer__body" id="cart-list">
+            <p class="cart-drawer__empty">Aún no hay componentes en tu carrito.</p>
+        </div>
+        
+        <div class="cart-drawer__footer">
+            <div class="cart-drawer__summary">
+                <span>Total:</span>
+                <span class="cart-drawer__total" id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" disabled>Procesar Pago</button>
+        </div>
+    </aside>
+
+    <div class="modal" id="success-modal">
+        <div class="modal__content">
+            <div class="modal__icon">🚀</div>
+            <h2 class="modal__title">¡Orden Confirmada!</h2>
+            <p class="modal__text">Tus periféricos están en camino.</p>
+            <button class="modal__btn" id="close-modal-btn">Continuar</button>
+        </div>
+    </div>
 
     <script src="src/main.js"></script>
 </body>
